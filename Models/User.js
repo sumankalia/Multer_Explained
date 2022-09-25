@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const UploadSchema = new mongoose.Schema(
+const UserSchema = new mongoose.Schema(
   {
     name: {
       type: String
@@ -15,4 +15,4 @@ const UploadSchema = new mongoose.Schema(
   }
 );
 
-module.exports = Upload = mongoose.model("Upload", UploadSchema);
+module.exports = User = mongoose.model("User", UserSchema);

@@ -1,23 +1,21 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-const path = require('path');
 
 const app = express();
 
 app.use(cors());
 
-const csvRoutes = require("./routes/uploadRoutes");
+const userRoutes = require("./routes/userRoutes");
 
-app.use('/public', express.static(path.join(__dirname, 'public')))
 
-app.use("/api/uploadCsv", csvRoutes);
+app.use("/api/users", userRoutes);
 
-const mongodbUri = "mongodb://localhost:27017/readCsvProject";
+const mongodbUri = "mongodb://localhost:27017/TestDatabase";
 
 mongoose.connect(mongodbUri, {
   useNewUrlParser: true,
-});
+});``
 
 mongoose.connection.on("connected", () => {
   console.log("Connected to mongodb...");
